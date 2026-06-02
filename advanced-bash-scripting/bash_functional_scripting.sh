@@ -1,6 +1,6 @@
 # sin(x) as series expansion
 #!/bin/Bash
-# Valeurs initiales
+# Inital values
 
 x=$1
 eps=$2
@@ -26,13 +26,13 @@ do
     # Computing incremental power
     power=$(echo "$power*$x*$x"|bc-l)
 
-    # Calcul de la factorielle incrémentale
+    # Computing the incremental factorial values
     fact=$(echo "$fact*(2*$i)*(2*$i+1)"|bc-l)
 
-    # Calcul du prochain terme
+    # Computing the next term
     term=$(echo "$sign*$power/$fact"|bc-l)
 
-    # Vérification de convergence
+    # Convergence check
     abs=$(echo "if($term<0) -$term else $t"|bc-l)
     if["$(echo "$abs<$eps"|bc-l)"-eq1]; then
         break
