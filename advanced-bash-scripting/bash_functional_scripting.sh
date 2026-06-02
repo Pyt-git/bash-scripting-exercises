@@ -14,16 +14,16 @@ sum=0
 
 while true
 do
-    # Calcul de la présente somme
+    # Computing the current sum
     sum=$(echo "$sum+$term"|bc-l)
 
-    # Préparer prochaine itération
+    # Preparing next iteration
     i=$((i+1))
 
-    # Calcul du signe alternant
+    # Computing alternating sign
     sign=$(echo "-1*$sign"|bc-l)
 
-    # Calcul de la puissance incrémentale
+    # Computing incremental power
     power=$(echo "$power*$x*$x"|bc-l)
 
     # Calcul de la factorielle incrémentale
