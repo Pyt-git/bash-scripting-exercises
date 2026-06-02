@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 # code that checks whether paramater is a directory
 if [-d "$1"]; then
